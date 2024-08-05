@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Image Selector</title>
+</head>
+<body>
+    <h1>Select Animal</h1>
+
+    <!-- Dropdown menu for selecting an animal -->
+    <select id="animalSelect">
+        <option value="dog" >Dog</option>
+        <option value="cat">Cat</option>
+        <option value="elephant">Elephant</option>
+        <option value="lion">Lion</option>
+    </select>
+
+    <!-- Image that will change based on selection -->
+    <img id="animalImage" src="dog.jpg" alt="Animal Image" width="300">
+
+    <!-- JavaScript to handle the selection change -->
+    <script>
+        // JavaScript function to update the image based on the selected animal
+        document.getElementById('animalSelect').addEventListener('change', function() {
+            const selectedAnimal = this.value;
+            console.log(selectedAnimal);
+            const animalImage = document.getElementById('animalImage');
+
+            // Update the src attribute of the img tag based on the selected animal
+            switch (selectedAnimal) {
+                case 'dog':
+                    animalImage.src = 'dog.jpg';
+                    break;
+                case 'cat':
+                    animalImage.src = 'cat.jpg';
+                    break;
+                case 'elephant':
+                    animalImage.src = 'elephant.jpg';
+                    break;
+                case 'lion':
+                    animalImage.src = 'lion.jpg';
+                    break;
+                default:
+                    animalImage.src = 'dog.jpg'; // Default image
+            }
+        });
+    </script>
+</body>
+</html>
